@@ -1,0 +1,20 @@
+name: Run Weather App
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  run-exe:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: List files (debug)
+        run: dir
+
+      - name: Run weather_app.exe
+        run: .\weather_app.exe
